@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMA 03</title>
+</head>
+<body>
+
+  <canvas width= "600" height="400"></canvas>
+  <script>
+
+
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "grey"; //propiedad o caracteristica
+    pincel.fillRect(0,0,600,400); //funcion
+
+    var radio = 10;
+    var xAleatoria;
+    var yAleatoria;
+    function diesenharCircunferencia(x,y,radio,color){
+
+      pincel.fillStyle = color;
+      pincel.beginPath();
+      pincel.arc(x,y,radio,0,2*Math.PI);
+      pincel.fill();
+
+    }
+
+    function limpiarPantalla(){
+
+      pincel.clearRect(0,0,600,400);
+
+    }
+
+    var x = 0;
+    
+
+    function disenharObjetivo(x,y){
+
+    diesenharCircunferencia(x,y,radio + 20,"purple")
+    diesenharCircunferencia(x,y,radio + 10,"white")
+    diesenharCircunferencia(x,y,radio,"purple")
+
+    }
+
+    function sortearPosicion(maximo){
+
+      return Math.floor(Math.random()*maximo)
+
+    }
+    function actualizarPantalla(){
+
+      limpiarPantalla();
+      var xAleatoria =  sortearPosicion(600)
+      var yAleatoria = sortearPosicion(400)
+      disenharObjetivo(xAleatoria,yAleatoria);
+      x++;
+
+    }
+    
+
+    // setInterval(actualizarPantalla,2000);
+    
+    function disparar(evento){
+
+      var x = evento.pageX - pantalla.offsetLeft;
+      var y = evento.pagey - pantalla.offsetTop;
+
+      if ((x < xAleatoria + radio) &&
+          (x > xAleatoria - radio) &&
+          (y < yAleatoria + radio) &&
+          (y > yAleatoria - radio)) {
+
+            alert("tiro god");
+
+          }
+
+    }
+
+    pantalla.onclick = disparar;
+
+    
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMA 01</title>
+</head>
+<body>
+
+  <canvas style="width: 600px; height: 400px;">
+
+  </canvas>
+  <script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "lightgrey"; //propiedad o caracteristica
+    pincel.fillRect(0,0,600,400); //funcion
+
+    pincel.fillStyle = "green"; //propiedad o caracteristica
+    pincel.fillRect(0,0,100,200);//funcion
+
+    pincel.fillStyle = "red"; //propiedad o caracteristica
+    pincel.fillRect(200,0,200,400);//funcion
+
+    pincel.fillStyle = "yellow"; //propiedad o caracteristica
+    pincel.beginPath();//funcion
+    pincel.moveTo(150,100);
+    pincel.lineTo(50,200);
+    pincel.lineTo(250,200);
+    pincel.fill()
+
+    pincel.fillStyle = "blue"; //propiedad o caracteristica
+    pincel.beginPath();//funcion
+    pincel.arc(150,70,40,0,2*3.14)
+    pincel.fill();
+  </script>
+</body>
+</html>

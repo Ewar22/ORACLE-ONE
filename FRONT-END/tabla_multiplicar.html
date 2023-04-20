@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="background: gray;">
+  <h1>TABLA DE MULTIPLICAR</h1>
+  <script>
+    function saltarLinea(){
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+    }
+
+    function imprimir (frase){
+
+    document.write(frase);
+    saltarLinea();
+
+    } 
+
+    var numero = parseInt(prompt("dame un numero:"));
+    var contador = 1;
+    imprimir("esto es un WHILE")
+    while (contador <= 10) {
+
+      imprimir(numero + " x " + contador + " = " + (numero*contador));
+      contador++
+
+    }
+
+    imprimir("esto es un FOR")
+
+    for(var contador = 1; contador <= 10; contador++){
+      imprimir(numero + " x " + contador + " = " + (numero*contador));
+    }
+  </script>
+</body>
+</html>
