@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+</head>
+<body>
+    <textarea name="" id="texto" cols="30" rows="10"></textarea>
+    <textarea name="" id="textoDesin" cols="30" rows="10"></textarea>
+    <button id="encriptar">Encriptar</button>
+    <button id="desincriptar">Desincripar</button>
+    
+
+    <script>
+        
+
+        function encriptar(){
+            var texto = document.querySelector("#texto").value;
+            var textoChange = texto.replace(/a/g, "ai").replace(/e/g, "enter").replace(/i/g, "imes").replace(/o/g, "ober").replace(/u/g, "ufat");
+            document.querySelector("#textoDesin").value = textoChange;
+            
+        }
+
+        function desincriptar(){
+            var texto = document.querySelector("#texto").value;
+            var textoChange = texto.replace(/ai/g, "a").replace(/enter/g, "e").replace(/imes/g, "i").replace(/ober/g, "o").replace(/ufat/g, "u");
+            document.querySelector("#textoDesin").value = textoChange;
+            
+        }
+
+        var buton = document.querySelector("#encriptar");
+        buton.onclick = encriptar;
+
+        var buton2 = document.querySelector("#desincriptar");
+        buton2.onclick = desincriptar;
+
+    </script>
+</body>
+</html>
