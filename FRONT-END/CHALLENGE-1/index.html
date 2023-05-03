@@ -4,30 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <title>Challenge</title>
 </head>
 <body>
     <textarea name="" id="texto" cols="30" rows="10"></textarea>
     <textarea name="" id="textoDesin" cols="30" rows="10"></textarea>
-    <button id="encriptar">Encriptar</button>
-    <button id="desincriptar">Desincripar</button>
-    
-
+    <button id="encriptar" class="buttons encriptar">Encriptar</button>
+    <button id="desincriptar" class="buttons desincriptar">Desincripar</button>
+    <button id="copiar" class="buttons copiar">Copiar</button>
     <script>
         
 
         function encriptar(){
-            var texto = document.querySelector("#texto").value;
-            var textoChange = texto.replace(/a/g, "ai").replace(/e/g, "enter").replace(/i/g, "imes").replace(/o/g, "ober").replace(/u/g, "ufat");
-            document.querySelector("#textoDesin").value = textoChange;
+            var texto =  document.querySelector("#texto").value;
+                texto = texto.replace(/a/g, "ai");
+                texto = texto.replace(/e/g, "enter");
+                texto = texto.replace(/i/g, "imes");
+                texto = texto.replace(/o/g, "ober");
+                texto = texto.replace(/u/g, "ufat");
+
+            document.querySelector("#textoDesin").value = texto;
+            
+        }
+        
+        function desincriptar(){
+            var texto =  document.querySelector("#texto").value;
+                texto = texto.replace(/ai/g, "a");
+                texto = texto.replace(/enter/g, "e");
+                texto = texto.replace(/imes/g, "i");
+                texto = texto.replace(/ober/g, "o");
+                texto = texto.replace(/ufat/g, "u");
+
+            document.querySelector("#textoDesin").value = texto;
             
         }
 
-        function desincriptar(){
-            var texto = document.querySelector("#texto").value;
-            var textoChange = texto.replace(/ai/g, "a").replace(/enter/g, "e").replace(/imes/g, "i").replace(/ober/g, "o").replace(/ufat/g, "u");
-            document.querySelector("#textoDesin").value = textoChange;
-            
+        function copiar(){
+            var texto2 = document.getElementById("textoDesin");
+            texto2.select();
+            document.execCommand('copy');
+            alert("copiado");
         }
 
         var buton = document.querySelector("#encriptar");
@@ -35,6 +53,9 @@
 
         var buton2 = document.querySelector("#desincriptar");
         buton2.onclick = desincriptar;
+
+        var buton3 = document.querySelector("#copiar");
+        buton3.onclick = copiar;
 
     </script>
 </body>
