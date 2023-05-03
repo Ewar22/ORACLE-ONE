@@ -9,11 +9,23 @@
     <title>Challenge</title>
 </head>
 <body>
-    <textarea name="" id="texto" cols="30" rows="10"></textarea>
-    <textarea name="" id="textoDesin" cols="30" rows="10"></textarea>
-    <button id="encriptar" class="buttons encriptar">Encriptar</button>
-    <button id="desincriptar" class="buttons desincriptar">Desincripar</button>
-    <button id="copiar" class="buttons copiar">Copiar</button>
+    <header>
+        <h1>eduard</h1>
+    </header>
+    <div class="container">
+        <div class="">  
+            <textarea name="" id="texto" cols="30" rows="10"></textarea>
+            <textarea name="" id="textoDesin" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <button id="encriptar" class="buttons encriptar">Encriptar</button>
+            <button id="desincriptar" class="buttons desincriptar">Desincripar</button>
+            <button id="copiar" class="buttons copiar">Copiar</button>
+        </div>
+    </div>
+    
+    
+
     <script>
         
 
@@ -45,7 +57,9 @@
             var texto2 = document.getElementById("textoDesin");
             texto2.select();
             document.execCommand('copy');
-            alert("copiado");
+            document.querySelector("#textoDesin").value = "";
+            document.querySelector("#texto").value = "";
+
         }
 
         var buton = document.querySelector("#encriptar");

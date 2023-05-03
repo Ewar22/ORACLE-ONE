@@ -1,3 +1,22 @@
-.buttons {
+header {
+  font-size: 2.5rem;
+  color: white;
+  background-color: gray;
+  height: 2rem;
+}
+
+header, h2 {
   padding: 1rem;
 }
+
+.container {
+  padding: 1rem 20%;
+  height: 100%;
+  background-color: gainsboro;
+}
+.buttons {
+  padding: 1rem;
+  border-radius: 7px;
+  background-color: aqua;
+  border: none;
+}   
