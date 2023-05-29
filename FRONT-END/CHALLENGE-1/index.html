@@ -6,24 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <title>Challenge</title>
 </head>
 <body>
     <header>
-        <h1>eduard</h1>
+        <h1>Encriptador</h1>
     </header>
-    <div class="container">
-        <div class="">  
-            <textarea name="" id="texto" cols="30" rows="10"></textarea>
-            <textarea name="" id="textoDesin" cols="30" rows="10"></textarea>
+    <main>
+        <div class="container">
+            <div class="text-area"> 
+                <textarea placeholder="TEXTO BASE" class="item" name="" id="texto" cols="10" rows="10"></textarea>
+                <textarea placeholder="TEXTO ENCRIPTAR O DESENCRIPTADO " class="item" name="" id="textoDesin" cols="10" rows="10"></textarea>
+            </div>
+            <p> <img src="img/alert.svg" alt="">Solo letras minusculas y sin acentos</p>
+            <div class="container-buttons">
+                <button id="encriptar" class="buttons encriptar">Encriptar</button>
+                <button id="desincriptar" class="buttons desincriptar">Desincripar</button>
+                <button id="copiar" class="buttons copiar">Copiar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>Eduard Issael Montaño Arreola</p>
         </div>
         <div>
-            <button id="encriptar" class="buttons encriptar">Encriptar</button>
-            <button id="desincriptar" class="buttons desincriptar">Desincripar</button>
-            <button id="copiar" class="buttons copiar">Copiar</button>
+            <a class="icons" href="https://github.com/Ewar22"><img src="img/github.svg" alt="Github" ></a>
+            <a class="icons" href="https://www.linkedin.com/in/eduard-monta%C3%B1o/"><img src="img/linkedin.svg" alt="linkedin" ></a>
         </div>
-    </div>
+        
+    </footer>
     <script src="app.js"></script>
 </body>
 </html>
